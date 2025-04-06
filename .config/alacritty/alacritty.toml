@@ -1,0 +1,16 @@
+[general]
+import = [
+  #"./themes/themes/cyber_punk_neon.toml"
+  "./themes/themes/dark_pride.toml"
+  # "./themes/themes/tokyo_night_enhanced.toml"
+]
+
+[window]
+decorations = "Transparent"
+padding = { x = 11, y = 11 }
+opacity = 0.85
+blur = true
+
+[font]
+normal = { family = "Hack Nerd Font", style = "Regular" }
+size = 14.25
