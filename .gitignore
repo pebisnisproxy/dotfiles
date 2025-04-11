@@ -1,2 +1,5 @@
 
 .config/alacritty/themes/
+.config/tmux/plugins/
+/.DS_Store
+.DS_Store

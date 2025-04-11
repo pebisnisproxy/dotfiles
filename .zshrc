@@ -38,8 +38,13 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+# go
+export GO_PATH=$HOME/go
+export PATH=$GO_PATH/bin:$PATH
+
 # misc aliases
 alias vim='nvim'
+alias ec="emacsclient -c -a 'emacs'"
 alias tree='tree -lah --gitignore'
 
 # get machine's ip address
@@ -74,3 +79,10 @@ autoload -U compinit && compinit
 
 # use starship theme (needs to be at the end)
 eval "$(starship init zsh)"
+
+# bun completions
+[ -s "/Users/sena/.bun/_bun" ] && source "/Users/sena/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
