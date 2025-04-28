@@ -1,4 +1,12 @@
-#!/bin/bash
+#!/bin/zsh
+
+setup_git() {
+    # accept standard input for name and email
+    read -p "Enter your name: " name
+    read -p "Enter your email: " email
+    git config --global user.email "$email"
+    git config --global user.name "$name"
+}
 
 declare -a brews=(
   "btop"
@@ -17,6 +25,8 @@ declare -a brews=(
   "tree"
   "zoxide"
   "font-hack-nerd-font"
+  "oven-sh/bun/bun"
+  "starship"
 )
 
 declare -a casks=(
@@ -45,6 +55,12 @@ install_casks() {
   done
 }
 
+install_omz_plugins() {
+    git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    git clone https://github.com/MichaelAquilina/zsh-you-should-use.git $ZSH_CUSTOM/plugins/you-should-use
+}
+
 xcodetools
 
 install_homebrew
@@ -53,4 +69,10 @@ install_brews
 
 install_casks
 
+install_omz_plugins
+
+setup_git
+
 stow .
+
+source ~/.zshrc
