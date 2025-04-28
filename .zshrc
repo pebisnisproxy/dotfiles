@@ -39,6 +39,9 @@ export PATH=$GO_PATH/bin:$PATH
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+# note: used by uv after installation
+. "$HOME/.local/bin/env"
+
 # misc aliases
 alias vim='nvim'
 alias tree='tree -lah --gitignore'
